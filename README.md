@@ -11,12 +11,31 @@ Downloads for BlackTools on Mac and Windows. This repository holds only release 
 
 ## First install
 
-**Mac:** open the .dmg and drag BlackTools to Applications. The app isn't notarized by Apple, so the first launch is blocked: open **System Settings → Privacy & Security** and click **Open Anyway**.
+### Mac
 
-**Windows:** run the setup .exe. If SmartScreen warns about an unknown publisher, click **More info → Run anyway**.
+BlackTools isn't notarized by Apple, so macOS says it "could not verify" the .dmg is free of malware and won't open it. Get past that in either of two ways.
+
+**Quickest: one Terminal command.** Before opening the .dmg, run this in Terminal (adjust the version if yours differs):
+
+```bash
+xattr -d com.apple.quarantine ~/Downloads/BlackTools_0.1.1_universal.dmg
+```
+
+Then open the .dmg and drag BlackTools to Applications. It opens without any warning.
+
+**Or with clicks:**
+
+1. Open the .dmg. When the warning appears, click **Done**, not Move to Trash.
+2. Open **System Settings → Privacy & Security**, scroll down to the line saying the .dmg was blocked, click **Open Anyway** and enter your Mac password.
+3. Drag BlackTools to Applications and open it. macOS blocks the app once more: repeat step 2 for BlackTools.
+
+### Windows
+
+
+Run the setup .exe. If SmartScreen warns about an unknown publisher, click **More info → Run anyway**.
 
 ## Updates
 
-BlackTools checks for new versions on its own. When one is out, **Update to …** appears at the bottom of the sidebar; click it and BlackTools updates and restarts. You can also click **Check for updates** there.
+BlackTools checks for new versions on its own. When one is out, **Update to …** appears at the bottom of the sidebar; click it and BlackTools updates and restarts. Updates never show the macOS warning. You can also click **Check for updates** there.
 
 Ignore `.app.tar.gz` and `latest.json` in each release: the updater uses them.
